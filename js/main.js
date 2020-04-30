@@ -59,7 +59,7 @@ function getRepos(user) {
             </li>`);
         }
       });
-      page++;
+      page = page + 1;
     })
     .catch((error) => console.log(error.message));
 }
@@ -70,16 +70,19 @@ async function fetchData(user, page = 1) {
   let res = await fetch(
     `https://api.github.com/users/${user}/repos?received_events&page=${page}&sort=${sort}`
   );
+  displayError(res);
 
-  // Display error message if user does not exist
+  let data = await res.json();
+  return data;
+}
+
+// Display error message if user does not exist
+function displayError(res) {
   if (res.status == 404) {
     $(".alert").css("display", "block");
   } else {
     $(".alert").css("display", "none");
   }
-
-  let data = await res.json();
-  return data;
 }
 
 // Add username to search params, append header under input, display load more button, get repos to generate timeline
