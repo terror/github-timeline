@@ -80,6 +80,8 @@ async function fetchData(user, page = 1) {
 function displayError(res) {
   if (res.status == 404) {
     $(".alert").css("display", "block");
+    $("#load-more").css("display", "none");
+    $(".center").html("");
   } else {
     $(".alert").css("display", "none");
   }
