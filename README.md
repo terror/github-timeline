@@ -6,3 +6,7 @@ Live Demo:
 
 ![](images/demo.gif)
 
+If you enjoyed this application please feel free to give it a star!
+
+Add me on discord: liam#0005 if you'd like to collaborate on a project.
+
