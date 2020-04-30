@@ -36,6 +36,12 @@
   width: 90%;
 }
 
+.alert {
+  width: 30%;
+  margin: auto;
+  display: none;
+}
+
 /* TIMELINE
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .timeline {
@@ -159,6 +165,10 @@ time {
 
 @media screen and (max-width: 800px) {
   .input-group {
+    width: 50%;
+  }
+
+  .alert {
     width: 50%;
   }
 

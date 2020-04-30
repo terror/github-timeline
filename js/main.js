@@ -70,6 +70,14 @@ async function fetchData(user, page = 1) {
   let res = await fetch(
     `https://api.github.com/users/${user}/repos?received_events&page=${page}&sort=${sort}`
   );
+
+  // Display error message if user does not exist
+  if (res.status == 404) {
+    $(".alert").css("display", "block");
+  } else {
+    $(".alert").css("display", "none");
+  }
+
   let data = await res.json();
   return data;
 }
